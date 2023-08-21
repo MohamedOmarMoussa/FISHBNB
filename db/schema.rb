@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_133120) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_21_135644) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "locations", force: :cascade do |t|
+    t.date "begin_date"
+    t.date "end_date"
+    t.bigint "poisson_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poisson_id"], name: "index_locations_on_poisson_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "poissons", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_poissons_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_133120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "locations", "poissons"
+  add_foreign_key "locations", "users"
+  add_foreign_key "poissons", "users"
 end
