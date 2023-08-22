@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+body{
+  margin: 0;
+}
+.goat-name a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.goat-name a:hover{
+  color: #8DA48A;
+}
