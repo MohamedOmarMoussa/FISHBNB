@@ -12,15 +12,17 @@ class PoissonsController < ApplicationController
   end
 
   def create
-    @poisson = Poisson.new(params[:poisson])
+    @poisson = Poisson.new(poisson_params)
+    @poisson.user = current_user
     if @poisson.save
-      redirect_to poisson_path(@poisson)
+      redirect_to poissons_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @poisson = Poisson.find(params[:id])
     @poisson.destroy
     redirect_to poissons_path, status: :see_other
   end

@@ -1,0 +1,12 @@
+<div class= "container">
+  <div class= "row">
+
+<%= simple_form_for(@poisson) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+  </div>
+</div>
