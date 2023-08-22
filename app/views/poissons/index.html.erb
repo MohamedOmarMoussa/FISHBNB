@@ -1,0 +1,50 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Poissons</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @poissons.count %> poissons out of our <%= Poisson.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Poisson.count %> poissons.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @poissons.each do |poisson| %>
+      <div class="col-md-4">
+        <div class="poisson-card">
+          <div class="poisson-card-image" style="background-image: url('<%= poisson.picture_url %>')"></div>
+          <div class="poisson-card-content">
+            <div class="poisson-card-title">
+              <h4><%= poisson
+        .name %></h4>
+            </div>
+            <p><%= poisson.category %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= poisson
+          .price %></span>
+              </div>
+            </div>
+          </div>
+          <div class="poisson-card-actions">
+            <%= link_to "More info", poisson_path(poisson) %>
+            <%# <%= link_to "Edit", edit_poisson_path(poisson
+      ), class: "ms-3 text-warning" %>
+            <%= link_to "Remove", poisson_path(poisson),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
