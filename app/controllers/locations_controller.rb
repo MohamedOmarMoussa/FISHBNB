@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-    before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
     @locations = Location.all
@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new (location_params)
+    @location = Location.new(location_params)
     if @location.save
       redirect_to :poissons_path, notice: "location created"
     else
@@ -41,11 +41,6 @@ class LocationsController < ApplicationController
 
   def set_location
     @location = Location.find(params:[id])
-  end
-
-  def location_params
-    params.require(:location).permit(:begin_date, :end_date, :poisson_id, :user_id)
-    @location = Location.find(params[:id])
   end
 
   def location_params
