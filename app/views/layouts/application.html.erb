@@ -10,7 +10,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="margin-top: 94px";>
+    <%= render 'shared/navbar' %>
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
+      <%= yield %>
+    <% else %>
+      <main class="container">
+        <%= yield %>
+      </main>
+    <% end %>
+    <%= render "shared/footer" %>
   </body>
 </html>
