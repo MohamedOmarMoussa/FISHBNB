@@ -22,15 +22,13 @@
           <div class="poisson-card-image" style="background-image: url('<%= poisson.picture_url %>')"></div>
           <div class="poisson-card-content">
             <div class="poisson-card-title">
-              <h4><%= poisson
-        .name %></h4>
+              <h4><%= poisson.name %></h4>
             </div>
             <p><%= poisson.category %></p>
             <div class="flex">
               <div class="flex align-items-center">
                 <i class="fa-solid fa-people-line"></i>
-                <span><%= poisson
-          .price %></span>
+                <span><%= poisson.price %></span>
               </div>
             </div>
           </div>
@@ -47,4 +45,14 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div class="cards p-5">
+  <% @poissons.each do |poisson| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <h3><%= poisson.name %></h3>
+      <p><%= poisson.category %></p>
+      <p><%= poisson.price %>€ /day</p>
+    </div>
+  <% end %>
 </div>
