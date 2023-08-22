@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "poissons", class: "navbar-brand" do %>
       <%= image_tag "https://www.creativefabrica.com/wp-content/uploads/2020/09/09/Fish-Logo-Graphics-5365128-1-1-580x386.jpg" %>
     <% end %>
 
@@ -10,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Tarifs", "#", class: "nav-link" %>
           </li>
@@ -20,16 +20,14 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Inscription", "#", class: "dropdown-item" %>
-              <%= link_to "Connexion", "#", class: "dropdown-item" %>
-              <%= link_to "Deconnexion", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Deconnexion", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
