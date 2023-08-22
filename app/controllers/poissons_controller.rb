@@ -1,2 +1,3 @@
 class PoissonsController < ApplicationController
+  
 end
