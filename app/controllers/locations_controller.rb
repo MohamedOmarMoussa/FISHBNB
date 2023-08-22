@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[show edit update destroy]
+    before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
     @locations = Location.all
@@ -16,9 +16,9 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = Location.new (location_params)
     if @location.save
-      redirect_to @location, notice: "location created"
+      redirect_to :poissons_path, notice: "location created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
 
   def update
     if @location.update
-      redirect_to @location, notice: "location updated"
+      redirect_to :poissons_path, notice: "location updated"
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,12 +34,17 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to locations_url, notice: "location cancelled!"
+    redirect_to :locations_path, notice: "cancelled!"
   end
 
   private
 
   def set_location
+    @location = Location.find(params:[id])
+  end
+
+  def location_params
+    params.require(:location).permit(:begin_date, :end_date, :poisson_id, :user_id)
     @location = Location.find(params[:id])
   end
 
