@@ -5,6 +5,7 @@ class PoissonsController < ApplicationController
   end
 
   def show
+    @location = Location.new
   end
 
   def new
