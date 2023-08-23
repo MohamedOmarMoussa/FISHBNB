@@ -5,8 +5,25 @@ body{
 
 h1{
   text-align: center;
-  color: rgb(188, 47, 47);
+  color: white;
   padding: 1em;
+}
+
+h2{
+  text-align: center;
+  color: white;
+  font-weight: normal;
+}
+
+p{
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .goat-name a{
@@ -18,10 +35,28 @@ h1{
   color: #8DA48A;
 }
 
-.card-category {
+.cards {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  padding: 10% 10%;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-infos {
+  padding: 10% 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,14 +65,14 @@ h1{
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.card-actions {
+  display: d-flex;
+}
+
+.card-infos p {
+  font-size: 20px;
 }
 
 // Smallest device
@@ -73,4 +108,35 @@ h1{
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin: 24px;
+  border-radius: 5px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
