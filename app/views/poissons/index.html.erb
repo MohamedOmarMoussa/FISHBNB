@@ -1,58 +1,31 @@
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Poissons</h1>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.natgeofe.com/n/18708334-6fce-40b5-ade6-a7e2db7035f2/01-goldfish-nationalgeographic_1567132.jpg);">
+    <div class="container">
+      <h1>FishBnb : la <strong>passion</strong> des <strong>poissons</strong>!</h1>
+      <h2>Découvre nos <strong><%= Poisson.count %></strong> fabuleux poissons à louer !</h2>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @poissons.count %> poissons out of our <%= Poisson.count %> on our website.</p>
-      <% else %>
-        <p>All <%= Poisson.count %> poissons.</p>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="row">
+  <div class="cards">
     <% @poissons.each do |poisson| %>
-      <div class="col-md-4">
-        <div class="poisson-card">
-          <div class="poisson-card-image" style="background-image: url('<%= poisson.picture_url %>')"></div>
-          <div class="poisson-card-content">
-            <div class="poisson-card-title">
-              <h4><%= poisson.name %></h4>
-            </div>
-            <p><%= poisson.category %></p>
-            <div class="flex">
-              <div class="flex align-items-center">
-                <i class="fa-solid fa-people-line"></i>
-                <span><%= poisson.price %></span>
-              </div>
-            </div>
-          </div>
-          <div class="poisson-card-actions">
-            <%= link_to "More info", poisson_path(poisson) %>
-            <%# <%= link_to "Edit", edit_poisson_path(poisson
-      ), class: "ms-3 text-warning" %>
-            <%= link_to "Remove", poisson_path(poisson),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-            %>
-          </div>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.pinimg.com/1200x/c3/b2/08/c3b208e1cfa152f59d36f47a87c07578.jpg)">
+        <div class="card-infos">
+          <h2><strong><%= poisson.name %></strong></h2>
+          <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
+        </div>
+        <div class="card-actions">
+          <%= link_to "Supprimer 🍣", poisson_path(poisson),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "ms-3 text-danger"
+          %>
+          <%= link_to "En savoir plus 🐟", poisson_path(poisson) %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<div class="cards p-5">
-  <% @poissons.each do |poisson| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <h3><%= poisson.name %></h3>
-      <p><%= poisson.category %></p>
-      <p><%= poisson.price %>€ /day</p>
-    </div>
-  <% end %>
-</div>
+<%# background-color: #c3cbdc;
+background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%); %>
