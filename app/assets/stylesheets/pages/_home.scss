@@ -69,10 +69,24 @@ a {
 
 .card-actions {
   display: d-flex;
+  width: 100%;
+}
+
+.book-form {
+  display: d-flex;
 }
 
 .card-infos p {
   font-size: 20px;
+}
+
+.fish h1 {
+  color: black;
+  padding: 0;
+}
+
+.fish p {
+  color: black;
 }
 
 // Smallest device
