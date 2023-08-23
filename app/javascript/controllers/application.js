@@ -7,3 +7,7 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+import {Cloudinary} from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({cloud: {cloudName: 'dyvsju8re'}});
