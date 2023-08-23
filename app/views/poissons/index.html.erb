@@ -10,7 +10,7 @@
 
   <div class="cards">
     <% @poissons.each do |poisson| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://i.pinimg.com/1200x/c3/b2/08/c3b208e1cfa152f59d36f47a87c07578.jpg)">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= poisson.picture_url %>)">
         <div class="card-infos">
           <h2><strong><%= poisson.name %></strong></h2>
           <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
