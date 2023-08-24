@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <h1>Tous vos poissons !</h1>
+    <div class="cards">
+      <% @poissons.each do |poisson| %>
+        <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= poisson.picture_url %>)">
+          <div class="card-infos">
+            <h2><strong><%= poisson.name %></strong></h2>
+            <p>Votre <%= poisson.category %> est actuellement proposé en location au prix de <strong><%= poisson.price %>€</strong> par jour !</p>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to poissons_new_path do %>
+        <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))">
+        <div class="card-infos">
+        <h2><strong>Ajouter un nouveau poisson !</strong></h2>
+        <p>Let's go !</p>
+        </div>
+      <% end %>
+    </div>
+    </div>
+</div>
