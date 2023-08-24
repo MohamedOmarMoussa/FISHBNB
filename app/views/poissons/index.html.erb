@@ -7,25 +7,16 @@
     </div>
   </div>
 
-
   <div class="cards">
     <% @poissons.each do |poisson| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= poisson.picture_url %>)">
-        <div class="card-infos">
-          <h2><strong><%= poisson.name %></strong></h2>
-          <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
+      <%= link_to poisson_path(poisson) do %>
+        <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= poisson.picture_url %>)">
+          <div class="card-infos">
+            <h2><strong><%= poisson.name %></strong></h2>
+            <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
+          </div>
         </div>
-        <div class="card-actions">
-          <%= link_to "Supprimer 🍣", poisson_path(poisson),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: "ms-3 text-danger"
-          %>
-          <%= link_to "En savoir plus 🐟", poisson_path(poisson) %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
-
-<%# background-color: #c3cbdc;
-background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%); %>
