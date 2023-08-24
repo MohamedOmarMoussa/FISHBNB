@@ -4,6 +4,10 @@ class PoissonsController < ApplicationController
     @poissons = Poisson.all
   end
 
+  def profil
+    @poissons = Poisson.select { |poisson| poisson.user == current_user }
+  end
+
   def show
     @location = Location.new
     @disable_date = @poisson.locations.map do |location|
@@ -16,6 +20,7 @@ class PoissonsController < ApplicationController
   end
 
   def create
+    # @poisson = Poisson.new(params[:poisson])
     @poisson = Poisson.new(poisson_params)
     @poisson.user = current_user
     if @poisson.save
