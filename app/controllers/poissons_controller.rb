@@ -2,7 +2,7 @@ class PoissonsController < ApplicationController
   before_action :set_poisson, only: [:show, :destroy]
   def index
     @poissons = Poisson.all
-  end
+    end
 
   def show
     @location = Location.new

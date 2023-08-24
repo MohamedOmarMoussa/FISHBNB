@@ -11,10 +11,10 @@ Poisson.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-annie = User.new({email: "annie@yopmail.com", password: "123456"})
-lucie = User.new({email: "lucie@yopmail.com", password: "123456"})
-julie = User.new({email: "julie@yopmail.com", password: "123456"})
-paulie = User.new({email: "paulie@yopmail.com", password: "123456"})
+annie = User.new({email: "annie@yopmail.com", password: "123456", address: 10 rue de Paris})
+lucie = User.new({email: "lucie@yopmail.com", password: "123456", address: 20 rue de Paris})
+julie = User.new({email: "julie@yopmail.com", password: "123456", address: 140 rue de Paris})
+paulie = User.new({email: "paulie@yopmail.com", password: "123456", address: 70 rue de Paris})
 annie.save!
 lucie.save!
 julie.save!
