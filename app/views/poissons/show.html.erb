@@ -1,35 +1,15 @@
-<div class="map" style="background-image: url('<%= @poisson.picture_url %>')"></div>
-
-<div class="container margin-top-negative">
+<div class="container text-center">
   <div class="row">
-    <div class="col-8">
-      <div class="poisson-show-card">
+    <div class="fish col-8 p-5">
+      <div>
+        <img src="https://www.podcastscience.fm/wp-content/uploads/2013/07/Piranha-1.jpg" class="img-fluid rounded" width="520">
         <h1><%= @poisson.name %></h1>
-        <p class="poisson-show-category"><%= @poisson.category %></p>
-      </div>
-      <div class="poisson-show-card">
+        <p><%= @poisson.category %></p>
       </div>
     </div>
-
-    <div class="col-4">
-      <div class="poisson-show-card">
-        <h5>Book this poisson</h5>
-
-        <%= render 'locations/form', poisson: @poisson, location: @location %>
-      </div>
-      <div class="poisson-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            <%# <%= @poisson.number_of_guests people %>
-          </div>
-          <div class="flex ms-3">
-            <%= @poisson.price %>€
-          </div>
-        </div>
-      </div>
-      <div class="poisson-show-card">
-      </div>
+    <div class="fish booking col-4 p-5">
+      <h1>Réservez moi</h1>
+      <%= render 'locations/form', poisson: @poisson, location: @location %>
     </div>
   </div>
 </div>

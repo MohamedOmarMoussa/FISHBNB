@@ -6,6 +6,9 @@ class PoissonsController < ApplicationController
 
   def show
     @location = Location.new
+    @disable_date = @poisson.locations.map do |location|
+      { from: location.begin_date, to: location.end_date }
+    end
   end
 
   def new

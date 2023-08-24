@@ -55,6 +55,14 @@ a {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}
+
 .card-infos {
   padding: 10% 10%;
   display: flex;
@@ -67,12 +75,39 @@ a {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.card-actions {
+// .card-actions {
+//   display: d-flex;
+//   width: 100%;
+// }
+
+.book-form {
   display: d-flex;
 }
 
 .card-infos p {
   font-size: 20px;
+}
+
+.booking {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.fish {
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+.fish h1 {
+  color: black;
+  padding: 0;
+}
+
+.fish p {
+  color: black;
 }
 
 // Smallest device

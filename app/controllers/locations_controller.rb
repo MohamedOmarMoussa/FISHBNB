@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
     @location.user = current_user
     @location.poisson = Poisson.find(params[:poisson_id])
     if @location.save
-      redirect_to location_path(@location)
+      redirect_to poisson_location_path(@location.poisson, @location)
     else
       redirect_to poisson_path(@poisson)
     end
@@ -41,6 +41,6 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params[:location].permit(:start_date, :end_date)
+    params.require(:location).permit(:begin_date, :end_date)
   end
 end

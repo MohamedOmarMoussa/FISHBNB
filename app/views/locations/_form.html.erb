@@ -1,24 +1,17 @@
-<div class="confirmation-box col-md-4">
+<div class="confirmation-box">
   <div class="listing-price">
     <div class="form-group">
-      <h4>$<%= @poisson.price %></h4>
-      <p>per day plus service fees</p><br>
 
-      <%= simple_form_for [@poisson, @location] do |f| %>
-        <%= f.input :begin_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-
+      <h4>pour <%= @poisson.price %>€ par jour</h4>
+      <%= simple_form_for [@poisson, @location], data: { controller: "datepicker", datepicker_disable_value: @disable_date.to_json } do |f| %>
+        <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "start" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end"} } %>
         <%= f.label :party_size %>
-        <%# <%= f.select :number_of_guests, options_for_select([["Please select one", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) %> %>
 
-        <h5>Subtotal: <strong>$<%= @poisson.price %></strong></h5><br>
+        <h5>Sous-total: <strong>€<%= @poisson.price %></strong></h5><br>
 
-        <%= f.submit "Request to book", class: "btn btn-danger form-control" %>
+        <%= f.submit "Demander une réservation", class: "btn btn-success form-control" %>
         <br><br>
-        <p class="text-center" style="color: grey">You won't be charged yet</p>
-        <p class="text-center" style="color: grey">-- Or --</p>
-
-        <%# <button class="btn btn-primary custom-link form-control"><%= link_to "Contact owner", conversations_path %></button> %>
       <% end %>
     </div>
   </div>
