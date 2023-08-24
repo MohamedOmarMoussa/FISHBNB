@@ -1,5 +1,18 @@
 <div class="container mt-3">
 
+<div class="row justify-content-center d-flex">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: poissons_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Recherche", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.natgeofe.com/n/18708334-6fce-40b5-ade6-a7e2db7035f2/01-goldfish-nationalgeographic_1567132.jpg);">
     <div class="container">
       <h1>FishBnb : la <strong>passion</strong> des <strong>poissons</strong>!</h1>
@@ -16,7 +29,16 @@
             <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
           </div>
         </div>
+
+
       <% end %>
     <% end %>
+
+        <div style d-flex="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
   </div>
 </div>

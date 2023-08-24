@@ -1,3 +1,34 @@
-<h1>HP : Louez le poisson de vos rêves !</h1>
-<button type="button" class="btn btn-primary">Primary</button>
-<%= link_to "poissons", poissons_path %>
+<div class="banner poisson_btnTarget" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.oobaooba.fr/img/post/21.jpg);">
+  <div class="container ">
+    <h1>FishBnb : la <strong>passion</strong> des <strong>poissons</strong>!</h1>
+    <button class="btn poisson_btn mx-auto" type="button">
+      <%= link_to "Découvre nos fabuleux poissons à louer !", poissons_path %>
+    </button>
+  </div>
+</div>
+
+<div class="cards">
+  <a href="/poissons/11">
+    <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://img.freepik.com/free-photo/multi-colored-koi-carp-swim-black-beauty-generated-by-ai_188544-27709.jpg)">
+      <div class="card-infos">
+            <h2><strong>Philipe</strong></h2>
+      </div>
+    </div>
+  </a>
+
+  <a href="/poissons/12">
+    <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.ctfassets.net/b85ozb2q358o/6c944648b7a93404b771fb1e3d91ce0b9f8c44fbc3f127d0356822ade7c11e75/02d60ce8f43e1eef3e0411320712690e/image.png)">
+      <div class="card-infos">
+            <h2><strong>Albert</strong></h2>
+      </div>
+    </div>
+  </a>
+
+  <a href="/poissons/13">
+    <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://www.aquaportail.com/aquabdd/photos/naso-elegans.jpg)">
+      <div class="card-infos">
+            <h2><strong>Vilo</strong></h2>
+      </div>
+    </div>
+</a>
+</div>

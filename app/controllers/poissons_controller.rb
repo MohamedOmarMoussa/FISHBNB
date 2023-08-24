@@ -2,6 +2,19 @@ class PoissonsController < ApplicationController
   before_action :set_poisson, only: [:show, :destroy]
   def index
     @poissons = Poisson.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @poissons = @poissons.where(sql_subquery, query: "%#{params[:query]}%")
+    end
+
+    @users = User.joins(:poissons).where(poissons: { id: @poissons })
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def profil
