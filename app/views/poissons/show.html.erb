@@ -2,12 +2,12 @@
   <div class="row">
     <div class="fish col-8 p-5">
       <div>
+        <img src="https://www.podcastscience.fm/wp-content/uploads/2013/07/Piranha-1.jpg" class="img-fluid rounded" width="520">
         <h1><%= @poisson.name %></h1>
         <p><%= @poisson.category %></p>
-        <img src="https://www.podcastscience.fm/wp-content/uploads/2013/07/Piranha-1.jpg" class="img-fluid rounded" width="520">
       </div>
     </div>
-    <div class="fish col-4 p-5">
+    <div class="fish booking col-4 p-5">
       <h1>Réservez moi</h1>
       <%= render 'locations/form', poisson: @poisson, location: @location %>
     </div>
