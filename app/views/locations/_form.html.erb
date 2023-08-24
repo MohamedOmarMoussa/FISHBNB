@@ -4,7 +4,6 @@
       <h4>€<%= @poisson.price %></h4>
       <p>par jour + les frais</p><br>
 
-
       <%= simple_form_for [@poisson, @location], data: { controller: "datepicker", datepicker_disable_value: @disable_date.to_json } do |f| %>
         <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "start" } } %>
         <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end"} } %>
