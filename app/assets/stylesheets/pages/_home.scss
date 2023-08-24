@@ -55,6 +55,14 @@ a {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}
+
 .card-infos {
   padding: 10% 10%;
   display: flex;
@@ -67,10 +75,10 @@ a {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.card-actions {
-  display: d-flex;
-  width: 100%;
-}
+// .card-actions {
+//   display: d-flex;
+//   width: 100%;
+// }
 
 .book-form {
   display: d-flex;

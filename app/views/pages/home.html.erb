@@ -1,11 +1,3 @@
-<h1 style="text-align:center">Louez le poisson de vos rêves !</h1>
-
-<div class="cards p-5">
-  <% @poissons.each do |poisson| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/7254512/pexels-photo-7254512.jpeg)">
-        <h2><%= poisson.name %></h2>
-        <p><%= poisson.category %></p>
-        <p><%= poisson.price %></p>
-      </div>
-  <% end %>
-</div>
+<h1>HP : Louez le poisson de vos rêves !</h1>
+<button type="button" class="btn btn-primary">Primary</button>
+<%= link_to "poissons", poissons_path %>
