@@ -3,6 +3,19 @@ body{
   margin: 0;
 }
 
+.poisson_btn {
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ background-color: rgba(134, 139, 145, 0.784);
+ border-radius: 5px;
+}
+
+.poisson_btnTarget {
+  display:flex;
+  justify-content: space-around;
+}
+
 h1{
   text-align: center;
   color: white;
@@ -24,6 +37,7 @@ p{
 
 a {
   text-decoration: none;
+  color:rgb(255, 255, 255);
 }
 
 .goat-name a{
