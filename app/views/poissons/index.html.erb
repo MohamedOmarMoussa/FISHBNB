@@ -15,8 +15,7 @@
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.natgeofe.com/n/18708334-6fce-40b5-ade6-a7e2db7035f2/01-goldfish-nationalgeographic_1567132.jpg);">
     <div class="container">
-      <h1>fishbnb : la <strong>passion</strong> des <strong>poissons</strong>!</h1>
-      <h2>Découvre nos <strong><%= Poisson.count %></strong> fabuleux poissons à louer !</h2>
+      <h1 class="home-h1">Découvre nos <strong><%= Poisson.count %></strong> fabuleux poissons à louer !</h1>
     </div>
   </div>
 
@@ -25,8 +24,8 @@
       <%= link_to poisson_path(poisson) do %>
         <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= poisson.picture_url %>)">
           <div class="card-infos">
-            <h2><strong><%= poisson.name %></strong></h2>
-            <p>Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
+            <h2 class="home-h2"><strong><%= poisson.name %></strong></h2>
+            <p class="home-p">Votre <%= poisson.category %> pour seulement <strong><%= poisson.price %>€</strong> par jour !</p>
           </div>
         </div>
       <% end %>
