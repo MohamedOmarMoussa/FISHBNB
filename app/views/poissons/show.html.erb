@@ -1,14 +1,23 @@
 <div class="container text-center">
   <div class="row">
-    <div class="fish col-8 p-5">
+    <div class="fish booking col-7 p-5">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= @poisson.picture_url %>)">
+        <div class="card-infos">
+          <h2><strong><%= @poisson.name %></strong></h2>
+          <p><%= @poisson.category %></p>
+        </div>
+      </div>
+      <div class="card-description">
+        <p><%= @poisson.description %></p>
+        <p><strong>Propriétaire du poisson : <%= @poisson.user.prenom %></strong></p>
+      </div>
+    </div>
+    <div class="col-1 p-5">
       <div>
-        <img src="https://www.podcastscience.fm/wp-content/uploads/2013/07/Piranha-1.jpg" class="img-fluid rounded" width="520">
-        <h1><%= @poisson.name %></h1>
-        <p><%= @poisson.category %></p>
       </div>
     </div>
     <div class="fish booking col-4 p-5">
-      <h1>Réservez moi</h1>
+      <h1>Réservez moi !</h1>
       <%= render 'locations/form', poisson: @poisson, location: @location %>
     </div>
   </div>
