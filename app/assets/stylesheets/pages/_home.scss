@@ -29,8 +29,8 @@ h2{
 }
 
 p{
-  text-align: center;
-  color: white;
+  text-align: left;
+  color: black;
   font-weight: normal;
   font-size: 16px;
 }
@@ -89,6 +89,22 @@ a {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.card-description {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.card-description h1 h2 p {
+  color: black;
+}
+
 // .card-actions {
 //   display: d-flex;
 //   width: 100%;
@@ -99,29 +115,28 @@ a {
 }
 
 .card-infos p {
+  color: white;
   font-size: 20px;
 }
 
 .booking {
   margin-top: 24px;
   margin-bottom: 24px;
+  // margin-left: 12px;
+  // margin-right: 12px;
   background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .fish {
-  padding-bottom: 24px;
-  margin-bottom: 48px;
+  padding-bottom: 36px;
+  margin-bottom: 36px;
 }
 
 .fish h1 {
   color: black;
   padding: 0;
-}
-
-.fish p {
-  color: black;
 }
 
 // Smallest device
