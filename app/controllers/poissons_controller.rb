@@ -26,6 +26,8 @@ class PoissonsController < ApplicationController
     @disable_date = @poisson.locations.map do |location|
       { from: location.begin_date, to: location.end_date }
     end
+    @markers = []
+    @markers << { lat: @poisson.user.latitude, lng: @poisson.user.longitude }
   end
 
   def new
