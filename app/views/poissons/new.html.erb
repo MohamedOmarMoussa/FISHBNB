@@ -1,19 +1,20 @@
-<div class= "container">
-  <div class= "row">
+<div class= "new">
+  <div class= "form-container">
+    <div class="form-inputs ">
+      <%= simple_form_for(@poisson) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category %>
+        <%= f.input :price %>
+        <%= f.submit class: "btn" %>
+      <% end %>
 
-<%= simple_form_for(@poisson) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category %>
-  <%= f.input :price %>
-  <%= f.submit class: "btn" %>
-<% end %>
 
+          <div style d-flex="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-        <div style d-flex="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+    </div>
 
   </div>
 </div>

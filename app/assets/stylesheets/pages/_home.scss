@@ -3,6 +3,11 @@ body{
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .poisson_btn {
  display:flex;
  justify-content: center;
@@ -16,26 +21,26 @@ body{
   justify-content: space-around;
 }
 
-h1{
+.home-h1 {
   text-align: center;
   color: white;
   padding: 1em;
 }
 
-h2{
+.home-h2 {
   text-align: center;
   color: white;
   font-weight: normal;
 }
 
-p{
+.home-p {
   text-align: center;
   color: white;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-a {
+.home-a {
   text-decoration: none;
   color:rgb(255, 255, 255);
 }
